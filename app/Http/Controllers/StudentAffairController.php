@@ -40,6 +40,207 @@ class StudentAffairController extends Controller
         return view('StudentAffairs.affair_index',['data' =>$data]);
     }
 
+    public function f1(){
+        $data = Affairs::join('gender','students.GenderId','=','gender.id')
+        ->join('nationality','students.NationalityId','=','nationality.id')
+        ->join('religion','students.ReligionId','=','religion.id')
+        ->join('governorate', 'students.GovernorateId','=', 'governorate.id')
+        ->join('town', 'students.TownId','=','town.id')
+        ->join('district', 'students.DistrictId','=','district.id')
+        ->join('education_data','education_data.StudentSsn','=','students.StudentSsn')
+        ->join('sublevel','education_data.LevelId','=','sublevel.id')
+        ->where('sublevel.SubLevelName','one')
+        ->select('students.*','gender.Sex','nationality.Nation','religion.ReligName','governorate.GovName','town.TownName','district.DistrictName')
+        ->orderby('id', 'asc')->get();
+        // $data = EduData1::join('students','education_data.StudentSsn','=','students.StudentSsn')
+        // ->join('student_disease','education_data.StudentSsn','=','student_disease.StudentSsn')
+        // ->join('gender','students.GenderId','=','gender.id')
+        // ->join('sublevel','education_data.LevelId','=','sublevel.id')
+        // ->join('educational_level','sublevel.LevelId','=','educational_level.id')
+        // ->where('sublevel.SubLevelName','one')
+        // ->select('student_disease.*','education_data.*','students.*','sublevel.*','educational_level.*','gender.Sex')
+        // ->get();
+
+        return view('StudentAffairs.affair_index', ['data'=>$data]);
+    }
+
+    public function f2(){
+        $data = Affairs::join('gender','students.GenderId','=','gender.id')
+        ->join('nationality','students.NationalityId','=','nationality.id')
+        ->join('religion','students.ReligionId','=','religion.id')
+        ->join('governorate', 'students.GovernorateId','=', 'governorate.id')
+        ->join('town', 'students.TownId','=','town.id')
+        ->join('district', 'students.DistrictId','=','district.id')
+        ->join('education_data','education_data.StudentSsn','=','students.StudentSsn')
+        ->join('sublevel','education_data.LevelId','=','sublevel.id')
+        ->where('sublevel.SubLevelName','two')
+        ->select('students.*','gender.Sex','nationality.Nation','religion.ReligName','governorate.GovName','town.TownName','district.DistrictName')
+        ->orderby('id', 'asc')->get();
+
+        return view('StudentAffairs.affair_index', ['data'=>$data]);
+    }
+
+    public function f3(){
+        $data = Affairs::join('gender','students.GenderId','=','gender.id')
+        ->join('nationality','students.NationalityId','=','nationality.id')
+        ->join('religion','students.ReligionId','=','religion.id')
+        ->join('governorate', 'students.GovernorateId','=', 'governorate.id')
+        ->join('town', 'students.TownId','=','town.id')
+        ->join('district', 'students.DistrictId','=','district.id')
+        ->join('education_data','education_data.StudentSsn','=','students.StudentSsn')
+        ->join('sublevel','education_data.LevelId','=','sublevel.id')
+        ->where('sublevel.SubLevelName','three')
+        ->select('students.*','gender.Sex','nationality.Nation','religion.ReligName','governorate.GovName','town.TownName','district.DistrictName')
+        ->orderby('id', 'asc')->get();
+
+        return view('StudentAffairs.affair_index', ['data'=>$data]);
+    }
+
+    public function f4(){
+        $data = Affairs::join('gender','students.GenderId','=','gender.id')
+        ->join('nationality','students.NationalityId','=','nationality.id')
+        ->join('religion','students.ReligionId','=','religion.id')
+        ->join('governorate', 'students.GovernorateId','=', 'governorate.id')
+        ->join('town', 'students.TownId','=','town.id')
+        ->join('district', 'students.DistrictId','=','district.id')
+        ->join('education_data','education_data.StudentSsn','=','students.StudentSsn')
+        ->join('sublevel','education_data.LevelId','=','sublevel.id')
+        ->where('sublevel.SubLevelName','four')
+        ->select('students.*','gender.Sex','nationality.Nation','religion.ReligName','governorate.GovName','town.TownName','district.DistrictName')
+        ->orderby('id', 'asc')->get();
+
+        return view('StudentAffairs.affair_index', ['data'=>$data]);
+    }
+
+    public function f5(){
+        $data = Affairs::join('gender','students.GenderId','=','gender.id')
+        ->join('nationality','students.NationalityId','=','nationality.id')
+        ->join('religion','students.ReligionId','=','religion.id')
+        ->join('governorate', 'students.GovernorateId','=', 'governorate.id')
+        ->join('town', 'students.TownId','=','town.id')
+        ->join('district', 'students.DistrictId','=','district.id')
+        ->join('education_data','education_data.StudentSsn','=','students.StudentSsn')
+        ->join('sublevel','education_data.LevelId','=','sublevel.id')
+        ->where('sublevel.SubLevelName','five')
+        ->select('students.*','gender.Sex','nationality.Nation','religion.ReligName','governorate.GovName','town.TownName','district.DistrictName')
+        ->orderby('id', 'asc')->get();
+
+        return view('StudentAffairs.affair_index', ['data'=>$data]);
+    }
+
+    public function f6(){
+        $data = Affairs::join('gender','students.GenderId','=','gender.id')
+        ->join('nationality','students.NationalityId','=','nationality.id')
+        ->join('religion','students.ReligionId','=','religion.id')
+        ->join('governorate', 'students.GovernorateId','=', 'governorate.id')
+        ->join('town', 'students.TownId','=','town.id')
+        ->join('district', 'students.DistrictId','=','district.id')
+        ->join('education_data','education_data.StudentSsn','=','students.StudentSsn')
+        ->join('sublevel','education_data.LevelId','=','sublevel.id')
+        ->where('sublevel.SubLevelName','sex')
+        ->select('students.*','gender.Sex','nationality.Nation','religion.ReligName','governorate.GovName','town.TownName','district.DistrictName')
+        ->orderby('id', 'asc')->get();
+
+        return view('StudentAffairs.affair_index', ['data'=>$data]);
+    }
+
+    public function f7(){
+        $data = Affairs::join('gender','students.GenderId','=','gender.id')
+        ->join('nationality','students.NationalityId','=','nationality.id')
+        ->join('religion','students.ReligionId','=','religion.id')
+        ->join('governorate', 'students.GovernorateId','=', 'governorate.id')
+        ->join('town', 'students.TownId','=','town.id')
+        ->join('district', 'students.DistrictId','=','district.id')
+        ->join('education_data','education_data.StudentSsn','=','students.StudentSsn')
+        ->join('sublevel','education_data.LevelId','=','sublevel.id')
+        ->where('sublevel.SubLevelName','seven')
+        ->select('students.*','gender.Sex','nationality.Nation','religion.ReligName','governorate.GovName','town.TownName','district.DistrictName')
+        ->orderby('id', 'asc')->get();
+
+        return view('StudentAffairs.affair_index', ['data'=>$data]);
+    }
+
+    public function f8(){
+        $data = Affairs::join('gender','students.GenderId','=','gender.id')
+        ->join('nationality','students.NationalityId','=','nationality.id')
+        ->join('religion','students.ReligionId','=','religion.id')
+        ->join('governorate', 'students.GovernorateId','=', 'governorate.id')
+        ->join('town', 'students.TownId','=','town.id')
+        ->join('district', 'students.DistrictId','=','district.id')
+        ->join('education_data','education_data.StudentSsn','=','students.StudentSsn')
+        ->join('sublevel','education_data.LevelId','=','sublevel.id')
+        ->where('sublevel.SubLevelName','eight')
+        ->select('students.*','gender.Sex','nationality.Nation','religion.ReligName','governorate.GovName','town.TownName','district.DistrictName')
+        ->orderby('id', 'asc')->get();
+
+        return view('StudentAffairs.affair_index', ['data'=>$data]);
+    }
+
+    public function f9(){
+        $data = Affairs::join('gender','students.GenderId','=','gender.id')
+        ->join('nationality','students.NationalityId','=','nationality.id')
+        ->join('religion','students.ReligionId','=','religion.id')
+        ->join('governorate', 'students.GovernorateId','=', 'governorate.id')
+        ->join('town', 'students.TownId','=','town.id')
+        ->join('district', 'students.DistrictId','=','district.id')
+        ->join('education_data','education_data.StudentSsn','=','students.StudentSsn')
+        ->join('sublevel','education_data.LevelId','=','sublevel.id')
+        ->where('sublevel.SubLevelName','nine')
+        ->select('students.*','gender.Sex','nationality.Nation','religion.ReligName','governorate.GovName','town.TownName','district.DistrictName')
+        ->orderby('id', 'asc')->get();
+
+        return view('StudentAffairs.affair_index', ['data'=>$data]);
+    }
+
+    public function f10(){
+        $data = Affairs::join('gender','students.GenderId','=','gender.id')
+        ->join('nationality','students.NationalityId','=','nationality.id')
+        ->join('religion','students.ReligionId','=','religion.id')
+        ->join('governorate', 'students.GovernorateId','=', 'governorate.id')
+        ->join('town', 'students.TownId','=','town.id')
+        ->join('district', 'students.DistrictId','=','district.id')
+        ->join('education_data','education_data.StudentSsn','=','students.StudentSsn')
+        ->join('sublevel','education_data.LevelId','=','sublevel.id')
+        ->where('sublevel.SubLevelName','ten')
+        ->select('students.*','gender.Sex','nationality.Nation','religion.ReligName','governorate.GovName','town.TownName','district.DistrictName')
+        ->orderby('id', 'asc')->get();
+
+        return view('StudentAffairs.affair_index', ['data'=>$data]);
+    }
+
+    public function f11(){
+        $data = Affairs::join('gender','students.GenderId','=','gender.id')
+        ->join('nationality','students.NationalityId','=','nationality.id')
+        ->join('religion','students.ReligionId','=','religion.id')
+        ->join('governorate', 'students.GovernorateId','=', 'governorate.id')
+        ->join('town', 'students.TownId','=','town.id')
+        ->join('district', 'students.DistrictId','=','district.id')
+        ->join('education_data','education_data.StudentSsn','=','students.StudentSsn')
+        ->join('sublevel','education_data.LevelId','=','sublevel.id')
+        ->where('sublevel.SubLevelName','eleven')
+        ->select('students.*','gender.Sex','nationality.Nation','religion.ReligName','governorate.GovName','town.TownName','district.DistrictName')
+        ->orderby('id', 'asc')->get();
+
+        return view('StudentAffairs.affair_index', ['data'=>$data]);
+    }
+
+    public function f12(){
+        $data = Affairs::join('gender','students.GenderId','=','gender.id')
+        ->join('nationality','students.NationalityId','=','nationality.id')
+        ->join('religion','students.ReligionId','=','religion.id')
+        ->join('governorate', 'students.GovernorateId','=', 'governorate.id')
+        ->join('town', 'students.TownId','=','town.id')
+        ->join('district', 'students.DistrictId','=','district.id')
+        ->join('education_data','education_data.StudentSsn','=','students.StudentSsn')
+        ->join('sublevel','education_data.LevelId','=','sublevel.id')
+        ->where('sublevel.SubLevelName','twelve')
+        ->select('students.*','gender.Sex','nationality.Nation','religion.ReligName','governorate.GovName','town.TownName','district.DistrictName')
+        ->orderby('id', 'asc')->get();
+
+        return view('StudentAffairs.affair_index', ['data'=>$data]);
+    }
+
+
     /**
      * Show the form for creating a new resource.
      *
@@ -273,7 +474,7 @@ class StudentAffairController extends Controller
             'LevelId'      ,//=>'required',
             'TermId'       ,// =>'required'
 
-          ]);
+          ]); 
           //  dd($info);
 
          $data = $request->except([
@@ -312,4 +513,22 @@ class StudentAffairController extends Controller
         $data = Affairs::where('StudentSsn', $StudentSsn)->delete();
         return redirect(url('affair/index'))->with('success','student deleted successfully');
     }
+
+    // ---------------------------------------------------------------------------------------------------------------------------
+
+    public function one(){
+        $data = EduData1::join('students','education_data.StudentSsn','=','students.StudentSsn')
+        ->join('student_disease','education_data.StudentSsn','=','student_disease.StudentSsn')
+        ->join('gender','students.GenderId','=','gender.id')
+        ->join('sublevel','education_data.LevelId','=','sublevel.id')
+        ->join('educational_level','sublevel.LevelId','=','educational_level.id')
+        ->where('sublevel.SubLevelName','one')
+        ->select('student_disease.*','education_data.*','students.*','sublevel.*','educational_level.*','gender.Sex')
+        ->get();
+
+        return view('StudentAffairs.1.affair_index_one', ['data'=>$data]);
+    }
+
+
+
 }
